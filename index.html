@@ -28,6 +28,18 @@
       }
       .project-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex-shrink: 0;
+        width: 100%;
+      }
+      @media (min-width: 768px) {
+        .project-card {
+          width: calc(50% - 1rem);
+        }
+      }
+      @media (min-width: 1024px) {
+        .project-card {
+          width: calc((100% - 4rem) / 3);
+        }
       }
       .project-card:hover {
         transform: translateY(-5px);
@@ -39,6 +51,40 @@
       }
       .whatsapp-float:hover {
         transform: scale(1.1);
+      }
+      .carousel-container {
+        position: relative;
+        padding: 0 2.5rem;
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .carousel-button.prev {
+        left: 0px;
+      }
+      .carousel-button.next {
+        right: 0px;
       }
     </style>
   </head>
@@ -296,202 +342,212 @@
           <h2 class="text-3xl font-bold text-center mb-12">
             Projetos em Destaque
           </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-              class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
-            >
-              <img
-                src="https://placehold.co/600x400/111827/7DD3FC?text=Love+Cake"
-                alt="Imagem do Projeto Love Cake Confeitaria"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-xl font-bold mb-2">Love Cake - Loja Virtual</h3>
-                <p class="text-gray-400 mb-4 flex-grow">
-                  Uma vitrine virtual e sistema de pedidos para uma confeitaria.
-                  A plataforma permite a gestão completa do catálogo,
-                  personalização de bolos e doces, e finalização de pedidos via
-                  WhatsApp. Desenvolvida com HTML, JavaScript e Firebase para
-                  uma experiência em tempo real.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >HTML</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >JavaScript</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Firebase</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Tailwind CSS</span
-                  >
-                </div>
-                <div class="flex space-x-4 mt-auto">
-                  <a
-                    href="https://lovecake-confeitaria.com.br/"
-                    target="_blank"
-                    class="text-cyan-400 hover:underline"
-                    >Ver Trabalho</a
-                  >
+          <div class="carousel-container overflow-hidden">
+            <div id="carousel-track" class="carousel-track gap-x-6 md:gap-x-8">
+              <div
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+              >
+                <img
+                  src="https://placehold.co/600x400/111827/7DD3FC?text=Love+Cake"
+                  alt="Imagem do Projeto Love Cake Confeitaria"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2">
+                    Love Cake - Loja Virtual
+                  </h3>
+                  <p class="text-gray-400 mb-4 flex-grow">
+                    Uma vitrine virtual e sistema de pedidos para uma
+                    confeitaria. A plataforma permite a gestão completa do
+                    catálogo, personalização de bolos e doces, e finalização de
+                    pedidos via WhatsApp. Desenvolvida com HTML, JavaScript e
+                    Firebase para uma experiência em tempo real.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >HTML</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >JavaScript</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Firebase</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Tailwind CSS</span
+                    >
+                  </div>
+                  <div class="flex space-x-4 mt-auto">
+                    <a
+                      href="https://lovecake-confeitaria.com.br/"
+                      target="_blank"
+                      class="text-cyan-400 hover:underline"
+                      >Ver Trabalho</a
+                    >
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div
-              class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
-            >
-              <img
-                src="https://placehold.co/600x400/111827/7DD3FC?text=API+Agenda"
-                alt="Imagem do Projeto API REST com Spring Boot"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-xl font-bold mb-2">
-                  API Agendador De ConsultasCDB
-                </h3>
-                <p class="text-gray-400 mb-4 flex-grow">
-                  Sistema backend para gerenciamento de consultas médicas,
-                  desenvolvido com Arquitetura Hexagonal e persistência via JDBC
-                  puro, sem uso de ORMs. Essa abordagem garante maior controle,
-                  transparência e performance nas queries SQL.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Java</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Spring Boot</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >PostgreSQL</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Docker</span
-                  >
-                </div>
-                <div class="flex space-x-4 mt-auto">
-                  <a
-                    href="https://github.com/WashingtonDDS/agendadorDeConsultasCDB"
-                    target="_blank"
-                    class="text-cyan-400 hover:underline"
-                    >Ver no GitHub</a
-                  >
+              <div
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+              >
+                <img
+                  src="https://placehold.co/600x400/111827/7DD3FC?text=API+Agenda"
+                  alt="Imagem do Projeto API REST com Spring Boot"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2">
+                    API Agendador De ConsultasCDB
+                  </h3>
+                  <p class="text-gray-400 mb-4 flex-grow">
+                    Sistema backend para gerenciamento de consultas médicas,
+                    desenvolvido com Arquitetura Hexagonal e persistência via
+                    JDBC puro, sem uso de ORMs. Essa abordagem garante maior
+                    controle, transparência e performance nas queries SQL.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Java</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Spring Boot</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Docker</span
+                    >
+                  </div>
+                  <div class="flex space-x-4 mt-auto">
+                    <a
+                      href="https://github.com/WashingtonDDS/agendadorDeConsultasCDB"
+                      target="_blank"
+                      class="text-cyan-400 hover:underline"
+                      >Ver no GitHub</a
+                    >
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div
-              class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
-            >
-              <img
-                src="https://placehold.co/600x400/111827/7DD3FC?text=Banco+Digital"
-                alt="Imagem do Projeto Banco Digital CDB"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-xl font-bold mb-2">Banco Digital CDB</h3>
-                <p class="text-gray-400 mb-4 flex-grow">
-                  API de banco digital com Spring Security, autenticação JWT,
-                  integração com API de CEP e e-mail para recuperação de senha e
-                  documentada com Swagger.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Spring Boot</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Spring Security</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >JWT</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Swagger</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >H2 DB</span
-                  >
-                </div>
-                <div class="flex space-x-4 mt-auto">
-                  <a
-                    href="https://github.com/WashingtonDDS/bancoDigitalSpringCDB"
-                    target="_blank"
-                    class="text-cyan-400 hover:underline"
-                    >Ver no GitHub</a
-                  >
+              <div
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+              >
+                <img
+                  src="https://placehold.co/600x400/111827/7DD3FC?text=Banco+Digital"
+                  alt="Imagem do Projeto Banco Digital CDB"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2">Banco Digital CDB</h3>
+                  <p class="text-gray-400 mb-4 flex-grow">
+                    API de banco digital com Spring Security, autenticação JWT,
+                    integração com API de CEP e e-mail para recuperação de senha
+                    e documentada com Swagger.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Spring Boot</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Spring Security</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >JWT</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Swagger</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >H2 DB</span
+                    >
+                  </div>
+                  <div class="flex space-x-4 mt-auto">
+                    <a
+                      href="https://github.com/WashingtonDDS/bancoDigitalSpringCDB"
+                      target="_blank"
+                      class="text-cyan-400 hover:underline"
+                      >Ver no GitHub</a
+                    >
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div
-              class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
-            >
-              <img
-                src="https://placehold.co/600x400/111827/7DD3FC?text=Resume.AI"
-                alt="Imagem do Projeto Resume.AI"
-                class="w-full h-48 object-cover"
-              />
-              <div class="p-6 flex flex-col flex-grow">
-                <h3 class="text-xl font-bold mb-2">
-                  API Inteligente para Organização e Revisão de Estudos
-                </h3>
-                <p class="text-gray-400 mb-4 flex-grow">
-                  API backend que permite aos usuários se cadastrar, fazer
-                  login, criar e gerenciar resumos filtrados por matéria, com
-                  potencial para gerar conteúdo automatizado por Inteligência
-                  Artificial.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Node.js</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >TypeScript</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Gemini</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >PostgreSQL</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >Docker</span
-                  >
-                  <span
-                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
-                    >JWT</span
-                  >
-                </div>
-                <div class="flex space-x-4 mt-auto">
-                  <a
-                    href="https://github.com/WashingtonDDS/api-inteligente-para-organizacao-e-revisao-de-estudos"
-                    target="_blank"
-                    class="text-cyan-400 hover:underline"
-                    >Ver no GitHub</a
-                  >
+              <div
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+              >
+                <img
+                  src="https://placehold.co/600x400/111827/7DD3FC?text=Resume.AI"
+                  alt="Imagem do Projeto Resume.AI"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-6 flex flex-col flex-grow">
+                  <h3 class="text-xl font-bold mb-2">
+                    API Inteligente para Organização e Revisão de Estudos
+                  </h3>
+                  <p class="text-gray-400 mb-4 flex-grow">
+                    API backend que permite aos usuários se cadastrar, fazer
+                    login, criar e gerenciar resumos filtrados por matéria, com
+                    potencial para gerar conteúdo automatizado por Inteligência
+                    Artificial.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Node.js</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >TypeScript</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Gemini</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >PostgreSQL</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >Docker</span
+                    >
+                    <span
+                      class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded"
+                      >JWT</span
+                    >
+                  </div>
+                  <div class="flex space-x-4 mt-auto">
+                    <a
+                      href="https://github.com/WashingtonDDS/api-inteligente-para-organizacao-e-revisao-de-estudos"
+                      target="_blank"
+                      class="text-cyan-400 hover:underline"
+                      >Ver no GitHub</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
+            <button id="prev-button" class="carousel-button prev">
+              &#10094;
+            </button>
+            <button id="next-button" class="carousel-button next">
+              &#10095;
+            </button>
           </div>
         </div>
       </section>
@@ -576,6 +632,94 @@
 
       mobileMenuButton.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("carousel-track");
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+
+        if (!track || !prevButton || !nextButton) return;
+
+        const slides = Array.from(track.children);
+        if (slides.length <= 1) {
+          prevButton.style.display = "none";
+          nextButton.style.display = "none";
+          return;
+        }
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        function getVisibleSlidesCount() {
+          if (window.innerWidth >= 1024) return 3;
+          if (window.innerWidth >= 768) return 2;
+          return 1;
+        }
+
+        function updateSlidePosition() {
+          const slideWidth = slides[0].getBoundingClientRect().width;
+          const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+          track.style.transform = `translateX(-${
+            currentIndex * (slideWidth + gap)
+          }px)`;
+        }
+
+        function adjustIndexForView() {
+          const visibleSlides = getVisibleSlidesCount();
+          const maxIndex = Math.max(0, slides.length - visibleSlides);
+          if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+          }
+        }
+
+        function moveToNextSlide() {
+          const visibleSlides = getVisibleSlidesCount();
+          const maxIndex = Math.max(0, slides.length - visibleSlides);
+          currentIndex++;
+          if (currentIndex > maxIndex) {
+            currentIndex = 0;
+          }
+          updateSlidePosition();
+        }
+
+        function moveToPrevSlide() {
+          currentIndex--;
+          if (currentIndex < 0) {
+            const visibleSlides = getVisibleSlidesCount();
+            const maxIndex = Math.max(0, slides.length - visibleSlides);
+            currentIndex = maxIndex;
+          }
+          updateSlidePosition();
+        }
+
+        function startAutoSlide() {
+          stopAutoSlide();
+          autoSlideInterval = setInterval(moveToNextSlide, 5000);
+        }
+
+        function stopAutoSlide() {
+          clearInterval(autoSlideInterval);
+        }
+
+        nextButton.addEventListener("click", () => {
+          stopAutoSlide();
+          moveToNextSlide();
+          startAutoSlide();
+        });
+
+        prevButton.addEventListener("click", () => {
+          stopAutoSlide();
+          moveToPrevSlide();
+          startAutoSlide();
+        });
+
+        window.addEventListener("resize", () => {
+          adjustIndexForView();
+          updateSlidePosition();
+        });
+
+        startAutoSlide();
       });
     </script>
   </body>
