@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <meta
+      name="description"
+      content="Portfólio de Washington Luiz, Desenvolvedor Full Stack especializado em Java, Spring, Node.js e React. Veja meus projetos e entre em contato."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <title>Washington Luiz - Desenvolvedor Full Stack</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,19 +45,8 @@
       }
       .project-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        flex-shrink: 0;
-        width: 100%;
       }
-      @media (min-width: 768px) {
-        .project-card {
-          width: calc(50% - 1rem);
-        }
-      }
-      @media (min-width: 1024px) {
-        .project-card {
-          width: calc((100% - 4rem) / 3);
-        }
-      }
+
       .project-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -54,7 +60,6 @@
       }
       .carousel-container {
         position: relative;
-        padding: 0 2.5rem;
       }
       .carousel-track {
         display: flex;
@@ -81,10 +86,10 @@
         background-color: rgba(0, 0, 0, 0.8);
       }
       .carousel-button.prev {
-        left: 0px;
+        left: 0.5rem;
       }
       .carousel-button.next {
-        right: 0px;
+        right: 0.5rem;
       }
     </style>
   </head>
@@ -223,114 +228,88 @@
         </div>
       </section>
 
-      <section id="tech" class="py-20">
-        <div class="container mx-auto px-6 text-center">
-          <h2 class="text-3xl font-bold mb-12">Tecnologias</h2>
-          <div
-            class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8"
-          >
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=JS"
-                alt="JavaScript"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+      <section id="tech" class="py-12 px-6 bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-cyan-400 mb-8">
+            Tecnologias
+          </h2>
+          <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-javascript-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>JavaScript</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=TS"
-                alt="TypeScript"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-typescript-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>TypeScript</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Java"
-                alt="Java"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-java-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Java</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Spring"
-                alt="Spring Boot"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-spring-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Spring Boot</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Node"
-                alt="Node.js"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-nodejs-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Node.js</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=React"
-                alt="React"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-react-original text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>React</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Next"
-                alt="Next.js"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-nextjs-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Next.js</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Nest"
-                alt="NestJS"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-nestjs-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>NestJS</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Git"
-                alt="Git"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-git-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Git</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Docker"
-                alt="Docker"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-docker-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Docker</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=SQL"
-                alt="SQL"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-postgresql-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>SQL</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Fire"
-                alt="Firebase"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-firebase-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Firebase</span>
             </div>
-            <div class="flex flex-col items-center tech-icon">
-              <img
-                src="https://placehold.co/64x64/FFFFFF/000000?text=Supa"
-                alt="Supabase"
-                class="h-16 w-16 mb-2 rounded-lg"
-              />
+            <div class="flex flex-col items-center tech-icon group">
+              <i
+                class="devicon-supabase-plain text-6xl mb-2 text-gray-300 group-hover:text-cyan-400 transition-colors"
+              ></i>
               <span>Supabase</span>
             </div>
           </div>
@@ -345,7 +324,7 @@
           <div class="carousel-container overflow-hidden">
             <div id="carousel-track" class="carousel-track gap-x-6 md:gap-x-8">
               <div
-                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
               >
                 <img
                   src="https://placehold.co/600x400/111827/7DD3FC?text=Hamburgueria"
@@ -391,8 +370,9 @@
                   </div>
                 </div>
               </div>
+
               <div
-                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
               >
                 <img
                   src="https://placehold.co/600x400/111827/7DD3FC?text=Love+Cake"
@@ -440,7 +420,7 @@
               </div>
 
               <div
-                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
               >
                 <img
                   src="https://placehold.co/600x400/111827/7DD3FC?text=API+Agenda"
@@ -520,7 +500,7 @@
               </div>
 
               <div
-                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
               >
                 <img
                   src="https://placehold.co/600x400/111827/7DD3FC?text=Banco+Digital"
@@ -568,7 +548,7 @@
               </div>
 
               <div
-                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col"
+                class="bg-gray-900 rounded-lg overflow-hidden project-card flex flex-col flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc((100%-4rem)/3)]"
               >
                 <img
                   src="https://placehold.co/600x400/111827/7DD3FC?text=Resume.AI"
@@ -640,12 +620,52 @@
           Estou disponível para novas oportunidades e projetos. Entre em
           contato!
         </p>
-        <a
-          href="mailto:washington.dds@hotmail.com"
-          class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full transition-colors mb-10"
+        <form
+          action="https://formspree.io/f/meopkplq"
+          id="contact-form"
+          method="POST"
+          class="max-w-xl mx-auto text-left mb-10"
         >
-          Mande um E-mail
-        </a>
+          <div class="mb-4">
+            <label for="name" class="block text-gray-300 mb-2">Nome</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-300 mb-2">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors"
+            />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-gray-300 mb-2"
+              >Mensagem</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-colors"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          >
+            Enviar Mensagem
+          </button>
+          <p id="form-status" class="mt-4 text-center"></p>
+        </form>
         <div class="flex justify-center space-x-6">
           <a
             href="https://github.com/WashingtonDDS"
@@ -800,6 +820,46 @@
         });
 
         startAutoSlide();
+
+        // Form submission handler
+        const contactForm = document.getElementById("contact-form");
+        const formStatus = document.getElementById("form-status");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+
+            formStatus.textContent = "Enviando...";
+            formStatus.className = "mt-4 text-center text-gray-400";
+
+            try {
+              const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                  Accept: "application/json",
+                },
+              });
+
+              if (response.ok) {
+                formStatus.textContent =
+                  "Mensagem enviada com sucesso! Obrigado.";
+                formStatus.className = "mt-4 text-center text-green-400";
+                form.reset();
+              } else {
+                formStatus.textContent =
+                  "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
+                formStatus.className = "mt-4 text-center text-red-400";
+              }
+            } catch (error) {
+              formStatus.textContent =
+                "Ocorreu um erro de rede. Verifique sua conexão e tente novamente.";
+              formStatus.className = "mt-4 text-center text-red-400";
+            }
+          });
+        }
       });
     </script>
   </body>
